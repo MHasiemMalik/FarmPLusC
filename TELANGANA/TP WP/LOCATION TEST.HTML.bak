@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TELANAGANA+</title>
+  <link rel="icon" href="C:\backg pic\icon.jpeg"/>
+  <script src="https://kit.fontawesome.com/f25cce70b4.js" crossorigin="anonymous"></script> 
+  <!--KITCODE: f25cce70b4--   #1b9bff-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family:montserrat;
+}
+.wrapper{
+  background:#1dba21;
+  position: fixed;
+  width: 100%;
+}
+.wrapper nav{
+  position: relative;
+  display: flex;
+  max-width: calc(100% - 50px);
+  margin: 0 auto;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .content{
+  display: flex;
+  align-items: center;
+}
+nav .content .links{
+  margin-left: 80px;
+  display: flex;
+}
+.content .logo a{
+  color: #fff;
+  font-size: 45px;
+  font-weight: 600;
+}
+.content .links li{
+  list-style: none;
+  line-height: 70px;
+}
+.content .links li a,
+.content .links li label{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 17px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.content .links li label{
+  display: none;
+}
+.content .links li a:hover,
+.content .links li label:hover{
+  background: ORANGE;
+}
+.wrapper .search-icon,
+.wrapper .menu-icon{
+  
+   font-size:30px;
+   color:white;
+   float:right;
+   line-height:80px;
+   margin-right:40px;
+   cursor: pointer;
+   display:none;
+   text-align: center;
+}
+.wrapper .menu-icon{
+  display: none;
+}
+.wrapper #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
+}
+
+
+.wrapper input[type="checkbox"]{
+  display: none;
+}
+
+/* Dropdown Menu code start */
+.content .links ul{
+  position: absolute;
+  background: #171c24;
+  top: 80px;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.content .links li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.content .links ul li a{
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  border-radius: 10px!important;
+}
+.content .links ul ul{
+  position: absolute;
+  top: 0;
+  right: calc(-50% - 45px);
+  background:#004080;
+}
+.content .links ul li{
+  position: relative;
+}
+.content .links ul li:hover ul{
+  top: 0;
+}
+
+/* Responsive code start */
+@media screen and (max-width: 1550px){
+  .wrapper nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content .links{
+    margin-left: 100px;
+  }
+  .content .links li a{
+    padding: 8px 13px;
+  }
+  <!--.wrapper .search-box{
+    max-width: calc(100% - 100px);
+  }
+  .wrapper .search-box input{
+    padding: 0 100px 0 15px;
+  }-->
+}
+
+@media screen and (max-width: 1320px){
+  .wrapper .menu-icon{
+    display: block;
+    float:right;
+  }
+  .wrapper #show-menu:checked ~ .menu-icon i::before{
+    content: "\f00d";
+  }
+  nav .content .links{
+    display: block;
+    position: fixed;
+    background: #2c3e50;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left: 0;
+    max-width: 70%;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    text-align:center;
+    transition: all 0.5s ease;
+  }
+  nav #show-menu:checked ~ .content .links{
+    left: 0%;
+  }
+  .content .links li{
+    margin: 15px 20px;
+  }
+  .content .links li a,
+  .content .links li label{
+    line-height: 40px;
+    font-size: 20px;
+    display: block;
+    padding: 8px 18px;
+    cursor: pointer;
+  }
+  .content .links li a.desktop-link{
+    display: none;
+  }
+
+  /* dropdown responsive code start */
+  .content .links ul,
+  .content .links ul ul{
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background:#171c24 ;
+    max-height: 0px;
+    overflow: hidden;
+    text-align:center;
+  }
+.content .links ul ul{
+   background:#004080;
+    border-radius: 5px!important;
+     margin: 1px 18px;
+
+        
+}
+  .content .links #show-features:checked ~ ul,
+  .content .links #show-services:checked ~ ul,
+  .content .links #show-services0:checked ~ ul,
+  .content .links #show-items:checked ~ ul,
+.content .links #show-items1:checked ~ ul,
+.content .links #show-items2:checked ~ ul,
+.content .links #show-items3:checked ~ ul{
+    max-height: 100vh;
+  
+  }
+  .content .links ul li{
+    margin: 1px 18px;
+
+  }
+  .content .links ul li a{
+    font-size: 15px;
+    line-height: 20px;
+    border-radius: 10px!important;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .wrapper nav{
+    padding: 0 10px;
+  }
+  .content .logo a{
+    font-size: 270px;
+  }
+  <!--.wrapper .search-box{
+    max-width: calc(100% - 70px);
+  }
+  .wrapper .search-box .go-icon{
+    width: 30px;
+    right: 0;
+  }
+  .wrapper .search-box input{
+    padding-right: 30px;
+  }-->
+}
+
+#secframe{
+	 width:100%;
+	 height:99vh;
+	 background:WHITE;      
+	 margin:auto;
+     PADDING-TOP:70PX;
+	}
+	#secframe iframe{
+	 width:100%;
+	 height:100%;
+     overflow:hidden;
+	 border:none;
+	 margin:auto;
+	}
+
+
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <nav>
+      <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <div class="content">
+       <label class="logo1" style="font-size:30px;padding-left:0px;">
+       <A style="color:WHITE;" HREF="C:\ALL INDIA\AIS WPS\INDIA+.HTML"><i class="fa-solid fa-caret-left "></i></A>
+     </label> &nbsp  &nbsp
+      <div class="logo"><a href="#">Farm+</a></div>
+         <ul class="links">
+		  <li>
+            <a  class="desktop-link">WEATHER / వాతావరణం <i class="fa-solid fa-caret-down "></i></a>
+            <input type="checkbox" id="show-services">
+            <label for="show-services">WEATHER / వాతావరణం <i class="fa-solid fa-caret-down "></i></label>
+            <ul>
+              <li><a href="https://www.ventusky.com/?p=21.8;76.4;3&l=feel" target="mf"><i class="fa-solid fa-tornado fa-shake"></i> MAP / చిత్రం   </a></li>
+              <li><a href="https://www.accuweather.com/en/in/adilabad/186773/weather-forecast/186773" target="mf"> <i class="fa-solid fa-cloud-sun"></i> DATA / సమాచారం </a></li>
+              <li><a href="http://localhost:5173/" target=""><i class="fa-solid fa-newspaper fa-beat"></i> NEWS / వార్తలు   </a></li>
+              <!--li>
+                <a href="#" class="desktop-link">WEATHER / వాతావరణం </a>
+                <input type="checkbox" id="show-items">
+                <label for="show-items">WEATHER / వాతావరణం </label>
+                <ul>
+                  <li><a href="#">MAP</a></li>
+                  <li><a href="#">DATA</a></li>
+                  <li><a href="#">NEWS</a></li>
+                </ul>
+              </li-->
+            </ul>
+           </li>
+          <li><a href="C:\ALL INDIA\AIS WPS\calculationsdemo.html" target="mf"><i class="fa-solid fa-calculator"> </i> CALCULATION / లెక్కింపు  </a></li>
+		  <li><a href="https://www.google.com/search?igu=1" target="mf"><i class="fa-sharp fa-solid fa-store"></i> MARKET / విక్రయం  </a></li>
+        </ul>
+      </div>
+      <!--label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+      <form action="#" class="search-box">
+        <input type="text" placeholder="Type Something to Search..." required>
+        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+      </form-->
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      
+    </nav>
+  </div>
+<SECTION ID="secframe">
+ <iframe bgcolor="black" src="C:\ALL INDIA\TELANGANA\TP WP\AD HOME.html"  name="mf"> <!--src="C:\FBGS+\ADILABAD.png"--><!---->
+  
+ <iframe>
+ <iframe src=""/>
+</SECTION>
+
+  
+</body>
+</html>
