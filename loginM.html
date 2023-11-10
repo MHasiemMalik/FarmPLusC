@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm+ Login</title>
+ 
+    <style>
+        a{
+            color: rgb(5, 234, 5);
+        }
+        body {
+            
+            font-family: Arial, sans-serif;
+            background-color: #101010;
+            color: rgb(5, 234, 5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgb(255, 174, 0);
+            width: 300px;
+            text-align: center;
+        }
+
+        input[type="text"], input[type="password"],input[type="email"],input[type="number"],input[type="option"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background-color: rgba(26, 191, 158, 0.1);
+            color: #00ffcc;
+            border-bottom: 2px solid #00ffcc;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: rgb(255, 174, 0);
+            color: #101010;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #X:hover{
+            box-shadow: 0 0 5px rgb(255, 174, 0),
+                        0 0 25px rgb(255, 174, 0),
+                        0 0 50px rgb(255, 174, 0);
+        }
+        button:hover {
+            box-shadow:0 0 5px rgb(255, 174, 0),
+                        0 0 25px rgb(255, 174, 0),
+                        0 0 50px rgb(255, 174, 0),
+                        0 0 100px rgb(255, 174, 0),
+                        0 0 200px rgb(255, 174, 0);
+        }
+
+        .switch {
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        input::placeholder {
+          color: rgb(5, 234, 5);
+        }
+
+
+    </style>
+</head>
+
+<body style="background-image: url(TELANGANA/TP\ CP\ PICS/wheatabc.jpg);background-repeat:no-repeat;background-position:center center; background-size:cover;  background-attachment:fixed;">
+    <div class="container" id="X">
+        <form method="post" action="FRegister" class="register-form"
+							id="register-form">
+							<div class="form-group">
+								<label for="name"><i
+									class="zmdi zmdi-account material-icons-name"></i></label> 
+                                    <input type="email" name="email" placeholder="Email" minlength="3" required>
+							</div>
+                            <div class="form-group">
+								<label for="name"><i
+									class="zmdi zmdi-account material-icons-name"></i></label>
+                                    <input type="password" name="password" placeholder="Password" minlength="3" required>
+							<div class="form-group"><br>
+								<input type="checkbox" name="agree-term" id="agree-term"
+									class="agree-term" /> <label for="agree-term"
+									class="label-agree-term"><span><span></span></span>I
+									agree all statements in <a href="#" class="term-service">Terms
+										of service</a></label>
+							</div>
+							<div class="form-group form-button">
+								<button type="submit" name="signup" id="signup"
+									class="form-submit" value="Login" >Login</button>
+							</div>
+						</form>
+    </div>
+
+    <!--   <script>
+    function checkPasswordStrength() {
+        var password = document.getElementById("password").value;
+        var indicator = document.getElementById("password-strength");
+        
+        // Check password complexity requirements here
+        var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{12,})");
+        
+        if (strongRegex.test(password)) {
+            indicator.textContent = "Strong password!";
+            indicator.style.color = "green";
+        } else {
+            indicator.textContent = "Weak password. Use symbols, numbers, and both uppercase and lowercase letters. Min length: 12 characters.";
+            indicator.style.color = "red";
+        }
+    }
+
+    function checkPasswordMatch() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm-password").value;
+        var matchIndicator = document.getElementById("password-match");
+
+        if (password === confirmPassword && confirmPassword !== "") {
+            matchIndicator.textContent = "Passwords match!";
+            matchIndicator.style.color = "green";
+        } else {
+            matchIndicator.textContent = "Passwords do not match.";
+            matchIndicator.style.color = "red";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector("form").addEventListener("submit", function(event) {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm-password").value;
+
+        if (password !== confirmPassword) {
+            event.preventDefault();
+            alert("Passwords do not match. Please correct them before submitting.");
+        }
+    });
+});
+
+    </script>-->
+</body>
+
+</html>

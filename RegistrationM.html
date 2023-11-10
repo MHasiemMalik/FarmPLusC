@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Login & Signup</title>
+    <script>
+    function checkPasswordStrength() {
+        var password = document.getElementById("password").value;
+        var indicator = document.getElementById("password-strength");
+        
+        // Check password complexity requirements here
+        var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{12,})");
+        
+        if (strongRegex.test(password)) {
+            indicator.textContent = "Strong password!";
+            indicator.style.color = "green";
+        } else {
+            indicator.textContent = "Weak password. Use symbols, numbers, and both uppercase and lowercase letters. Min length: 12 characters.";
+            indicator.style.color = "red";
+        }
+    }
+
+    function checkPasswordMatch() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm-password").value;
+        var matchIndicator = document.getElementById("password-match");
+
+        if (password === confirmPassword && confirmPassword !== "") {
+            matchIndicator.textContent = "Passwords match!";
+            matchIndicator.style.color = "green";
+        } else {
+            matchIndicator.textContent = "Passwords do not match.";
+            matchIndicator.style.color = "red";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector("form").addEventListener("submit", function(event) {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm-password").value;
+
+        if (password !== confirmPassword) {
+            event.preventDefault();
+            alert("Passwords do not match. Please correct them before submitting.");
+        }
+    });
+});
+
+    </script>
+    <style>
+        a{
+            color: orange;
+        }
+        body {
+            
+            font-family: Arial, sans-serif;
+            background-color: #101010;
+            color: orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgb(78, 252, 78);
+            width: 300px;
+            text-align: center;
+        }
+
+        input[type="text"], input[type="password"],input[type="email"],input[type="number"],input[type="option"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background-color: rgba(26, 191, 158, 0.1);
+            color: #00ffcc;
+            border-bottom: 2px solid #00ffcc;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: rgb(5, 234, 5);
+            color: #101010;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #X:hover{
+            box-shadow: 0 0 5px rgb(5, 234, 5),
+                        0 0 25px rgb(5, 234, 5),
+                        0 0 50px rgb(5, 234, 5);
+        }
+        button:hover {
+            box-shadow:0 0 5px rgb(5, 234, 5),
+                        0 0 25px rgb(5, 234, 5),
+                        0 0 50px rgb(5, 234, 5),
+                        0 0 100px rgb(5, 234, 5),
+                        0 0 200px rgb(5, 234, 5);
+        }
+
+        .switch {
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        input::placeholder {
+          color: orange;
+        }
+
+        option{
+          background-color: #101010; /* Dark background like your body's background */
+          color: orange; /* Orange text to match your theme */
+          padding: 5px 10px; /* Some padding for better appearance */
+        }
+
+    </style>
+</head>
+
+<body style="background-image: url(TELANGANA/TP\ CP\ PICS/maizefarmer.jpg);background-repeat:no-repeat;background-position:center center; background-size:cover;  background-attachment:fixed;">
+    <div class="container" id="X">
+        <form method="post" action="FRegister" class="register-form"
+							id="register-form">
+							<div class="form-group">
+								<label for="name"><i
+									class="zmdi zmdi-account material-icons-name"></i></label> 
+                                    <input type="text" name="first-name" placeholder="First Name" minlength="3" required>
+							</div>
+                            <div class="form-group">
+								<label for="name"><i
+									class="zmdi zmdi-account material-icons-name"></i></label>
+                                    <input type="text" name="last-name" placeholder="Last Name" minlength="3" required>
+            
+                            <div class="form-group">
+								<label for="name"><i
+									class="zmdi zmdi-account material-icons-name"></i></label> 
+                                    <input type="number" name="number-12" placeholder="Adhar Number" min="100000000000" max="999999999999" required>
+            
+							<div class="form-group">
+								<label for="email"><i class="zmdi zmdi-email"></i></label> 
+                                <input type="number" name="number-10" placeholder="Phone" min="100000000"  max="9999999999" required>
+            
+							</div>
+							<div class="form-group">
+								<label for="pass"><i class="zmdi zmdi-lock"></i></label> 
+                                <input type="email" name="email" placeholder="Email ID" required>
+                            </div>
+							<div class="form-group">
+								<label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+								<input type="password" id="password" name="password" placeholder="Password" minlength="12" oninput="checkPasswordStrength();" required>
+							</div>
+                            <div id="password-strength"></div>
+							<div class="form-group">
+								<label for="contact"><i class="zmdi zmdi-lock-outline"></i></label>
+								<input type="password" id="confirm-password" name="confirm-password" placeholder="Retype Password" oninput="checkPasswordMatch();" required>
+							</div>
+                            <div id="password-match"></div>
+                            <div class="form-group">
+								<label>Role:</label>                    
+                                <input type="radio" name="role" value="buyer" required> Buyer
+                                <input type="radio" name="role" value="seller" required> Seller
+                                <input type="radio" name="role" value="other" required> Other
+                            </div><br>
+                            <div>
+                                <input type="text" list="mylist" placeholder="Enter City"/>
+		                          <datalist id="mylist">
+                                     <option value="Hyderabd"/>
+                                     <option value="Delhi"/>
+                                     <option value="Karnataka"/>
+                                     <option value="Chennai"/>
+                                     <option value="Ahmedabad"/>
+                                     <option value="Bengal"/>
+                                     <option value="Tamil nadu"/>
+                                     <option value="Bhopal"/>
+                                     <option value="Punjab"/>
+                                     <option value="Goa"/>
+                                     <option value="Kerala"/>
+                                     <option value="Bihar"/>
+                                 </datalist>
+                            </div>
+							<div class="form-group"><br>
+								<input type="checkbox" name="agree-term" id="agree-term"
+									class="agree-term" /> <label for="agree-term"
+									class="label-agree-term"><span><span></span></span>I
+									agree all statements in <a href="#" class="term-service">Terms
+										of service</a></label>
+							</div>
+							<div class="form-group form-button">
+								<button type="submit" name="signup" id="signup"
+									class="form-submit" value="Register" >Register</button>
+							</div>
+						</form>
+    </div>
+</body>
+
+</html>
